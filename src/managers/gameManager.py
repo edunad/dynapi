@@ -14,8 +14,8 @@ class GameManager(object):
 
     @staticmethod
     def think():
-        print "Hello World"
+        print("Hello Think")
 
     @staticmethod
     def draw():
-        print "Hello World"
+        print("Hello Draw")

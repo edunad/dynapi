@@ -1,8 +1,9 @@
 #!/usr/bin/env python
+import pkgutil
+import sys
 
-from classes import *
-from managers/screenManager import *
-from managers/gameManager import *
+import managers.screenManager
+import managers.gameManager
 
 """
 #################
@@ -14,7 +15,6 @@ from managers/gameManager import *
 
 class Core(object):
     def __init__(self):
-        print(managers)
         self.screenManager = ScreenManager()
         self.gameMamager = GameManager()
 
@@ -24,19 +24,3 @@ class Core(object):
 if __name__ == '__main__':
     core = Core()
     core.run()
-
-
-import pkgutil
-import sys
-
-
-def load_all_modules_from_dir(dirname):
-    for importer, package_name, _ in pkgutil.iter_modules([dirname]):
-        full_package_name = '%s.%s' % (dirname, package_name)
-        if full_package_name not in sys.modules:
-            module = importer.find_module(package_name
-                        ).load_module(full_package_name)
-            print module
-
-
-load_all_modules_from_dir('Foo')

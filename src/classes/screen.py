@@ -28,7 +28,7 @@ class Screen(object):
         return x > self.width or y > self.height or x < 0 or y < 0
 
     def setPixel(self, x, y, hex):
-        if !self.isInsideScreen(x,y):
+        if not self.isInsideScreen(x,y):
             return
 
         r,g,b = col.hex_to_rgb(hex)
@@ -36,6 +36,6 @@ class Screen(object):
         unicorn.show()
 
     def getPixel(self, x, y):
-        if !self.isInsideScreen(x,y):
+        if not self.isInsideScreen(x,y):
             return
         return unicorn.get_pixel(x, y)

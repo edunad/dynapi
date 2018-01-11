@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from classes import *
+import classes.screen
 
 """
 #################
@@ -17,8 +17,8 @@ class ScreenManager(object):
 
     @staticmethod
     def think():
-        print "Hello World"
+        print("Hello think")
 
     @staticmethod
     def draw():
-        print "Hello World"
+        print("Hello draw")
