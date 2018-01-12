@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from gamePad.controllerBase import *
+from gamePad import *
 from evdev import InputDevice, categorize, ecodes, KeyEvent
 
 """
@@ -24,9 +24,10 @@ class ControllerManager(object):
         self.devices = {dev.fd: dev for dev in self.devices}
         for dev in devices.values():
             if '8Bitdo' in dev.name:
-                self.controllers.append()
-            else if 'USB,2-axis' in dev.name:
-                self.controllers.append()
+                self.controllers.append(BITDO())
+            elif 'USB,2-axis' in dev.name:
+                self.controllers.append(BUFFALO())
+        print(self.controllers)
 
     @classmethod
     def think(self):

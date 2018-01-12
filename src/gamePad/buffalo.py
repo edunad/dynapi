@@ -9,6 +9,7 @@ from baseController import *
 ######################################
 """
 
-class BITDO(BaseController):
+class BUFFALO(BaseController):
     def onKeyPress(self, keyEvent):
+        print('BUFFALO HANDLE')
         super(BaseController, self).onKeyPress()
