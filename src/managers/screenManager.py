@@ -16,10 +16,10 @@ class ScreenManager(object):
         self.screen = Screen();
 
     @staticmethod
-    def think():
+    def think(self):
         print("Hello think")
 
     @staticmethod
-    def draw():
+    def draw(self):
         self.screen.setPixel(0, 0, 255, 255, 0)
         print("Hello draw")
