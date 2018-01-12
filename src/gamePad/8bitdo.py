@@ -1,7 +1,5 @@
 #!/usr/bin/env python
-
-from abc import ABCMeta, abstractmethod
-from baseEntity import *
+from baseController import *
 
 """
 #################
@@ -11,6 +9,6 @@ from baseEntity import *
 ######################################
 """
 
-class Player(BaseEntity):
-    def draw(self):
-        super(BaseEntity, self).draw()
+class BITDO(BaseController):
+    def onKeyPress(self, keyEvent):
+        super(BaseController, self).onKeyPress()
