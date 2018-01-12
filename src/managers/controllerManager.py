@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import gamePad.controllerBase
+from gamePad.controllerBase import *
 from evdev import InputDevice, categorize, ecodes, KeyEvent
 
 """
@@ -17,7 +17,7 @@ class ControllerManager(object):
         self.devices = {}
         self.controllers = []
 
-        self.loadControllers()
+        #self.loadControllers()
 
     def loadControllers(self):
         self.devices = map(InputDevice,('/dev/input/event0','/dev/input/event1'))
@@ -28,6 +28,6 @@ class ControllerManager(object):
             else if 'USB,2-axis' in dev.name:
                 self.controllers.append()
 
-    @staticmethod
-    def think():
+    @classmethod
+    def think(self):
         print("Hello think")

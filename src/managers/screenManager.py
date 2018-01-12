@@ -14,11 +14,11 @@ class ScreenManager(object):
     def __init__(self):
         self.screen = Screen();
 
-    @staticmethod
+    @classmethod
     def think(self):
         print("Hello think")
 
-    @staticmethod
+    @classmethod
     def draw(self):
-        ScreenManager.screen.setPixel(0, 0, 255, 255, 0)
+        self.screen.setPixel(0, 0, 255, 255, 0)
         print("Hello draw")
