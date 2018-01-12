@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 import sys
 
-import managers.screenManager
-import managers.gameManager
+from managers.screenManager import *
+from managers.gameManager import *
 
 """
 #################

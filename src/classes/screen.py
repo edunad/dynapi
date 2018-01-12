@@ -1,6 +1,8 @@
 #!/usr/bin/env python
-
-import unicornhat as unicorn
+try :
+    import unicornhat as unicorn
+except:
+    Exception('unicornhat module not found, please run "sudo pip install unicornhat"')
 
 """
 #################

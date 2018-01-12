@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import classes.screen
+from classes.screen import *
 
 """
 #################
