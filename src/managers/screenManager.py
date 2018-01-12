@@ -11,7 +11,6 @@ from classes.screen import *
 """
 
 class ScreenManager(object):
-
     def __init__(self):
         self.screen = Screen();
 
@@ -21,5 +20,5 @@ class ScreenManager(object):
 
     @staticmethod
     def draw(self):
-        self.screen.setPixel(0, 0, 255, 255, 0)
+        ScreenManager.screen.setPixel(0, 0, 255, 255, 0)
         print("Hello draw")
