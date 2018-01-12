@@ -21,4 +21,5 @@ class ScreenManager(object):
 
     @staticmethod
     def draw():
+        self.screen.setPixel(0, 0, 255, 255, 0)
         print("Hello draw")
