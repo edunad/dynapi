@@ -1,5 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from abc import ABCMeta, abstractmethod
+import evdev
 
 """
 #################
@@ -12,10 +13,15 @@ from abc import ABCMeta, abstractmethod
 class BaseController(object):
     __metaclass__ = ABCMeta
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, device):
+        self.name = 'UNKNOWN'
+        self.device = device
+        self.initDevice()
+
+    @abstractmethod
+    def initDevice(self):
+        pass
 
     @abstractmethod
     def onKeyPress(self, keyEvent):
-        print('AUCH')
-        #pass
+        pass

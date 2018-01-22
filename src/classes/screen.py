@@ -23,15 +23,22 @@ class Screen(object):
         unicorn.brightness(brightness)
 
         self.width, self.height = unicorn.get_shape()
-        self.screenGrid = {}
 
     def isInsideScreen(self, x, y):
-        return x > self.width or y > self.height or x < 0 or y < 0
+        return x < self.width and y < self.height and x >= 0 and y >= 0
+
+    def isPixelAlreadySet(self, x, y, r, g, b):
+        if not self.isInsideScreen(x,y):
+            return True
+
+        oldR, oldG, oldB = unicorn.get_pixel(x, y)
+        return oldR == r and oldG == g and oldB == b
 
     def setPixel(self, x, y, r, g, b):
-        if not self.isInsideScreen(x,y):
+        if not self.isInsideScreen(x,y) or self.isPixelAlreadySet(x, y, r, g, b):
             return
 
+        print("[SCREEN] Setting Pixel At " + str(x) + "," + str(y) + " | COLOR : " + str(r) + "," + str(g) + "," + str(b))
         unicorn.set_pixel(x, y, int(r), int(g), int(b))
         unicorn.show()
 

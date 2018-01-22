@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from classes import *
 
@@ -12,10 +12,10 @@ from classes import *
 
 class GameManager(object):
 
-    @staticmethod
-    def think():
-        print("Hello Think")
+    @classmethod
+    def think(self):
+        pass
 
-    @staticmethod
-    def draw():
-        print("Hello Draw")
+    @classmethod
+    def draw(self):
+        pass

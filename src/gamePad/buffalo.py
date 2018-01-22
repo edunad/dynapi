@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-from baseController import *
+#!/usr/bin/env python3
+from .baseController import *
 
 """
 #################
@@ -10,6 +10,8 @@ from baseController import *
 """
 
 class BUFFALO(BaseController):
+    def initDevice(self):
+        self.name = 'Buffalo controller'
+
     def onKeyPress(self, keyEvent):
-        print('BUFFALO HANDLE')
-        super(BaseController, self).onKeyPress()
+        print(keyEvent)

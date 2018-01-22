@@ -16,11 +16,23 @@ from managers.controllerManager import *
 class Core(object):
     def __init__(self):
         self.screenManager = ScreenManager()
-        self.gameMamager = GameManager()
+        self.gameManager = GameManager()
         self.controllerManager = ControllerManager()
 
-    def run(self):
+    def think(self):
+        self.gameManager.think()
+        self.screenManager.think()
+        self.controllerManager.think()
+
+    def draw(self):
+        self.gameManager.draw()
         self.screenManager.draw()
+
+    def run(self):
+        while True:
+            self.think()
+            self.draw()
+
 
 if __name__ == '__main__':
     core = Core()

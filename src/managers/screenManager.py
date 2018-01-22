@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from classes.screen import *
 
@@ -14,11 +14,8 @@ class ScreenManager(object):
     def __init__(self):
         self.screen = Screen();
 
-    @classmethod
     def think(self):
-        print("Hello think")
+        pass
 
-    @classmethod
     def draw(self):
         self.screen.setPixel(0, 0, 255, 255, 0)
-        print("Hello draw")

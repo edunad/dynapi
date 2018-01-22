@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-from baseController import *
+#!/usr/bin/env python3
+from .baseController import *
 
 """
 #################
@@ -10,6 +10,8 @@ from baseController import *
 """
 
 class BITDO(BaseController):
+    def initDevice(self):
+        self.name = '8BITDO controller'
+
     def onKeyPress(self, keyEvent):
-        print('BITDO HANDLE')
-        super(BaseController, self).onKeyPress()
+        print(keyEvent)
