@@ -18,6 +18,11 @@ class Core(object):
         self.screenManager = ScreenManager()
         self.gameManager = GameManager()
         self.controllerManager = ControllerManager()
+        self.controllerManager.events.onKeyUp += self.keyUpTest
+
+    def keyUpTest(self, data):
+        print('key up event! HUZAH')
+        print(data)
 
     def think(self):
         self.gameManager.think()

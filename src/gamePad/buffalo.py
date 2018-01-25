@@ -10,8 +10,5 @@ from .baseController import *
 """
 
 class BUFFALO(BaseController):
-    def initDevice(self):
+    def defineController(self):
         self.name = 'Buffalo controller'
-
-    def onKeyPress(self, keyEvent):
-        print(keyEvent)
